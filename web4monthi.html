@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trang Mẫu</title>
+<style>
+/* General Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    background-color: #f5f5f5; /* A slightly warmer, softer background */
+    color: #333; /* Darker, more readable text color */
+    line-height: 1.7; /* Slightly increased line height for better readability */
+    -webkit-font-smoothing: antialiased; /* Improves font rendering on webkit browsers */
+}
+
+.container {
+    width: 90%; /* Wider container for a more modern look */
+    max-width: 1200px;
+    margin: 50px auto; /* Increased top margin */
+    background-color: #fff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+    border-radius: 15px; /* More rounded corners */
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.18); /* Slightly increased shadow on hover */
+}
+
+/* Header Styles */
+.header {
+    background-image: linear-gradient(to right, #4a90e2, #63b8ff);
+    color: #fff;
+    padding: 50px 40px; /* Increased padding */
+    text-align: center;
+    position: relative;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.25); /* Thicker border */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align to the left */
+    margin-bottom: 25px; /* Increased margin */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+.logo {
+    width: 60px; /* Slightly larger logo */
+    height: 60px; /* Slightly larger logo */
+    border-radius: 15px; /* Rounded logo corners */
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+    margin-right: 20px; /* Increased margin */
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* Stronger logo shadow */
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover img {
+    transform: scale(1.15); /* More pronounced scale on hover */
+}
+
+/* Navigation */
+.navigation {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px; /* Reduced gap for better button spacing */
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em; /* Slightly larger font size */
+    opacity: 0.9;
+    transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    padding: 10px 20px; /* Increased button padding */
+    border-radius: 8px; /* More rounded corners */
+    background-color: rgba(255, 255, 255, 0.15); /* Adjusted transparency */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Added a subtle border */
+}
+
+.navigation a:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.25); /* Slightly darker background on hover */
+    color: #f0f0f0;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.4); /* Increased text shadow */
+}
+
+.navigation a.active {
+    background-color: #fff;
+    color: #007bff; /* Consistent brand color */
+    font-weight: 600; /* Slightly bolder active link */
+    text-shadow: none;
+}
+
+h1 {
+    font-size: 3em; /* Larger title */
+    margin-bottom: 15px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Stronger text shadow */
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 1.3em; /* Slightly larger paragraph */
+    opacity: 0.95; /* Increased opacity */
+}
+
+/* Content Styles */
+.content {
+    display: flex;
+    padding: 40px; /* Increased padding */
+    justify-content: space-around;
+}
+
+.column {
+    width: 48%;
+    background-color: #fff; /*  White background for columns */
+    border-radius: 12px; /* More rounded corners */
+    padding: 30px; /* Increased padding */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid #eee; /* Added subtle border */
+}
+
+.column:hover {
+    transform: translateY(-8px); /* Increased translateY */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* Increased box-shadow */
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 250px; /* Increased height */
+    overflow: hidden;
+    border-radius: 12px; /* More rounded corners */
+    margin-bottom: 20px; /* Increased margin */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12); /* Stronger shadow */
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-out; /* Slower transition */
+}
+
+.image-placeholder:hover img {
+    transform: scale(1.1);
+}
+
+.title {
+    font-weight: 800; /* Bolder title */
+    color: #222; /* Darker title color */
+    border-bottom: 4px solid #ddd; /* Thicker border */
+    padding-bottom: 15px; /* Increased padding */
+    margin-bottom: 22px; /* Increased margin */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Increased letter spacing */
+    font-size: 1.3em;
+}
+
+.article {
+    padding: 0;
+    font-size: 17px; /* Slightly larger font size */
+    line-height: 1.9; /* Increased line height */
+    color: #444; /* Darker color for better contrast */
+}
+
+.article strong {
+    font-weight: 700;
+    color: #222;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 40px; /* Increased padding */
+    background-color: #f0f0f0; /* Lighter background */
+    border-top: 1px solid #ddd;
+    font-size: 1em; /* Increased font size */
+    color: #666; /* Darker color */
+}
+
+/* About Section */
+.about-section, .contact-section {
+    padding: 40px;
+    background-color: #fff; /* White background */
+    border-radius: 12px;
+    margin: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Shadow for about and contact sections */
+    border: 1px solid #eee;
+    display: none;
+    text-align: center;  /* Center the about section content */
+}
+
+.about-section h2, .contact-section h2 {
+    font-size: 2.2em; /* Larger heading */
+    color: #222; /* Darker heading */
+    margin-bottom: 20px; /* Increased margin */
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    color: #444; /* Darker paragraph color */
+}
+
+/* Contact Section */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-links a {
+    display: inline-block;
+    padding: 12px 20px; /* Increased padding */
+    background-color: #e8e8e8; /* Lighter button background */
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px; /* More rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+}
+
+.contact-links a:hover {
+    background-color: #d0d0d0; /* Slightly darker background on hover */
+    color: #222;
+}
+
+/* Active Styles */
+.active {
+    display: block; /* Show active section */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .column {
+        width: 100%;
+        margin-bottom: 40px;
+        padding: 20px;
+    }
+    .header {
+        padding: 30px;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    .header p {
+        font-size: 1.1em;
+    }
+    .logo-container {
+        flex-direction: row; /* Keep logo and name in a row on small screens */
+        align-items: center; /* Vertically align items */
+        text-align: left; /* Ensure text is left-aligned */
+    }
+
+    .logo {
+        margin-right: 10px;
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+function showSection(sectionId) {
+  // Hide all sections
+  document.querySelector('.content').style.display = 'none';
+  document.querySelector('.about-section').style.display = 'none';
+  document.querySelector('.contact-section').style.display = 'none';
+
+  // Deactivate all navigation links
+  document.querySelectorAll('.navigation a').forEach(link => {
+    link.classList.remove('active');
+  });
+
+  // Show the selected section
+  if (sectionId === 'home') {
+    document.querySelector('.content').style.display = 'flex';
+  } else {
+    document.getElementById(sectionId).style.display = 'block';
+  }
+
+  // Activate the clicked navigation link
+  document.querySelector(`.navigation a[href="#${sectionId}"]`).classList.add('active');
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="https://i.imgur.com/84pyw9u.png"alt="Logo">
+            </div>
+            <span style="font-size:1.2em; font-weight: bold;">Blog Cá Nhân</span>
+        </div>
+        <h1 style="text-transform:uppercase;">4 môn thi</h1>
+        <p>Học để khẳng định mình</p>
+        <div class="navigation">
+            <a href="#home" onclick="showSection('home')" class="active">Trang chủ</a>
+            <a href="#about" onclick="showSection('about')">Giới thiệu</a>
+            <a href="#contact" onclick="showSection('contact')">Liên hệ</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="column">
+            <div class="image-placeholder">
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWl2ZHR3YWxsOGF0bXBtZHpjZTF3cG5sZXIyanJsdmtyOWF2bjhicyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ny7UCd6JETnmE/giphy.gif" alt="Hình ảnh Toán">
+            </div>
+            <div class="title">Các môn thi bắt buộc</div>
+            <div class="article">
+                <strong>Toán:</strong> Toán học là môn khoa học nghiên cứu về các cấu trúc, trật tự và quan hệ đã hình thành từ các thực hành đếm, đo và mô tả hình dạng của các vật thể. Môn học này được sử dụng rộng rãi trong khoa học tự nhiên, kỹ thuật, y học, tài chính và các ngành khác. Toán học là chìa khóa để giải quyết vấn đề và phát triển tư duy logic.
+            </div>
+            <div class="article">
+                <strong>Văn:</strong> Văn học là nghệ thuật sử dụng ngôn ngữ để diễn đạt và truyền tải các ý tưởng, cảm xúc và trải nghiệm của con người. Nó phản ánh cuộc sống, văn hóa và lịch sử của một xã hội. Văn học giúp chúng ta hiểu rõ hơn về bản thân, thế giới xung quanh và những giá trị nhân văn cao đẹp.
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="image-placeholder">
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3UycGtud3B0MDVsam1uaTI5NXVkNzBqeXo0cHhsYWNsOXIyNnVqbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8dYmJ6Buo3lYY/giphy.gif" alt="Hình ảnh Sử">
+            </div>
+            <div class="title">Các môn thi tự chọn</div>
+            <div class="article">
+                <strong>Anh:</strong> Tiếng Anh là một ngôn ngữ toàn cầu, được sử dụng rộng rãi trong giao tiếp quốc tế, kinh doanh, khoa học và công nghệ. Nó mở ra cơ hội tiếp cận tri thức, văn hóa và những nền văn minh khác nhau trên thế giới. Học tiếng Anh giúp chúng ta tự tin giao tiếp và hội nhập quốc tế.
+            </div>
+            <div class="article">
+                <strong>Sử:</strong> Lịch sử là môn khoa học nghiên cứu về quá khứ của nhân loại, từ thời tiền sử đến hiện đại. Nó giúp chúng ta hiểu rõ hơn về nguồn gốc, quá trình phát triển và những biến đổi của xã hội loài người. Lịch sử cũng giúp chúng ta rút ra những bài học kinh nghiệm từ quá khứ để xây dựng một tương lai tốt đẹp hơn.
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="about-section">
+        <h2>Giới thiệu</h2>
+        <p>Trường Sơn<br>
+        Lớp 12a9<br>
+        THPT Lâm Hà</p>
+    </div>
+
+    <div id="contact" class="contact-section">
+        <h2>Liên hệ</h2>
+        <div class="contact-links">
+            <a href="#">Facebook : Trường Sơn</a>
+            <a href="#">Zalo : 0123456789</a>
+            <a href="#">Instagram : Tsown</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        2025   Bản quyền thuộc về Trường Sơn
+    </div>
+</div>
+
+</body>
+</html>
